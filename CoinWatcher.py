@@ -13,7 +13,8 @@ class CoinWatcher:
 	def step_record(self, CoinPair):
 			MarketHistoryJson = self.ImportMarketData(CoinPair)
 
-			self.ExportMarketData(CoinPair, MarketHistoryJson)
+			if MarketHistoryJson is not None:
+				self.ExportMarketData(CoinPair, MarketHistoryJson)
 
 	def startwatching(self):
 		while 1:
